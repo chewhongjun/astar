@@ -47,7 +47,6 @@ def astar(graph, start, goal):
         for childPosition, actionCost in graph.getChildren(position):
             # Only add to the open list if it's not expanded yet
             if not childPosition in closedList:
-                childCost = graph.getHCost(childPosition, goal)
                 childNode = Node(childPosition, cost + actionCost, position)
                 openList.push(childNode, childNode.cost + graph.getHCost(childPosition, goal))
 
